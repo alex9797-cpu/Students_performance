@@ -63,6 +63,7 @@ print(f' Absolute Value of Correlation with the Outcome Variable:')
 for i in range(len(numeric_features)):
     print(numeric_features[i])
     print(abs_corr[i])
+    print('\n')
 
 
 # Failures and eductaion of parents have heighest correlation with the response
@@ -84,6 +85,26 @@ for variable in numeric_features:
     plt.boxplot(df_numeric[variable])
     plt.title(f'Boxplot of {variable}')
     plt.show()
+
+
+
+cat_features=['school','sex','address','famsize','Pstatus','Mjob', 'Fjob', 'reason', 'guardian','schoolsup', 'famsup', 'paid', 'activities', 'nursery','higher', 'internet']
+
+df_cat=students_data[cat_features]
+
+print(students_data['school'].value_counts()/len(students_data['school']))
+
+# Visualize Relative Frequencies of Variables
+
+for col in df_cat.columns:
+    plt.bar(df_cat[col].value_counts()/len(df_cat[col]))
+    plt.show()
+
+
+
+
+
+
 
 
 
